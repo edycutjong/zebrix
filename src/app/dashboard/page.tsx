@@ -1,6 +1,8 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+import Link from 'next/link';
+import Image from 'next/image';
 import { supabase } from '@/lib/supabase';
 import type { TradeSignal, Trade, Referee, DashboardStats, PnlDataPoint } from '@/lib/types';
 import { RefereeTendencyCard } from '@/components/RefereeTendencyCard';
@@ -199,9 +201,9 @@ export default function DashboardPage() {
       <header className="border-b border-(--color-border) bg-(--color-bg-card)/80 backdrop-blur-sm sticky top-0 z-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
           <div className="flex items-center justify-between">
-            <div className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-lg bg-(--color-cyan)/10 border border-(--color-cyan)/20 flex items-center justify-center">
-                <span className="text-xl">🦓</span>
+            <Link href="/" className="flex items-center gap-3 hover:opacity-80 transition-opacity">
+              <div className="w-10 h-10 rounded-lg bg-(--color-cyan)/10 border border-(--color-cyan)/20 flex items-center justify-center p-2">
+                <Image src="/icon.svg" alt="Zebrix Icon" width={24} height={24} className="w-full h-full object-contain" />
               </div>
               <div>
                 <h1
@@ -214,7 +216,7 @@ export default function DashboardPage() {
                   REFEREE ASSIGNMENT ALPHA • POLYMARKET
                 </p>
               </div>
-            </div>
+            </Link>
 
             <div className="flex items-center gap-4">
               <div className="flex items-center gap-2 text-sm">
