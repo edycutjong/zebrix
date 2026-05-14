@@ -9,7 +9,7 @@ export function TradeSignalPanel({ signals, trades }: TradeSignalPanelProps) {
   return (
     <div className="glass-card p-4 h-full">
       <h2
-        className="text-sm font-semibold text-[var(--color-text-secondary)] tracking-widest uppercase mb-4"
+        className="text-sm font-semibold text-(--color-text-secondary) tracking-widest uppercase mb-4"
         style={{ fontFamily: 'var(--font-display)' }}
       >
         Trade Signals
@@ -24,12 +24,12 @@ export function TradeSignalPanel({ signals, trades }: TradeSignalPanelProps) {
               key={signal.id}
               className={`p-3 rounded-lg border transition-all duration-200 ${
                 signal.status === 'pending'
-                  ? 'border-[var(--color-amber)]/30 bg-[var(--color-amber)]/5'
+                  ? 'border-(--color-amber)/30 bg-(--color-amber)/5'
                   : signal.status === 'executed' && trade && (trade.pnl ?? 0) > 0
-                    ? 'border-[var(--color-emerald)]/30 bg-[var(--color-emerald)]/5'
+                    ? 'border-(--color-emerald)/30 bg-(--color-emerald)/5'
                     : signal.status === 'executed' && trade && (trade.pnl ?? 0) < 0
-                      ? 'border-[var(--color-red)]/30 bg-[var(--color-red)]/5'
-                      : 'border-[var(--color-border)] bg-[var(--color-bg-card)]'
+                      ? 'border-(--color-red)/30 bg-(--color-red)/5'
+                      : 'border-(--color-border) bg-(--color-bg-card)'
               }`}
             >
               {/* Header */}
@@ -45,14 +45,14 @@ export function TradeSignalPanel({ signals, trades }: TradeSignalPanelProps) {
                     }`}
                   />
                   <span
-                    className="text-xs text-[var(--color-text-muted)] uppercase"
+                    className="text-xs text-(--color-text-muted) uppercase"
                     style={{ fontFamily: 'var(--font-mono)' }}
                   >
                     {signal.status}
                   </span>
                 </div>
                 <span
-                  className="text-xs text-[var(--color-text-muted)]"
+                  className="text-xs text-(--color-text-muted)"
                   style={{ fontFamily: 'var(--font-mono)' }}
                 >
                   {signal.gameDate}
@@ -61,10 +61,10 @@ export function TradeSignalPanel({ signals, trades }: TradeSignalPanelProps) {
 
               {/* Game Info */}
               <div className="mb-2">
-                <p className="text-sm font-semibold text-[var(--color-text-primary)]">
+                <p className="text-sm font-semibold text-(--color-text-primary)">
                   {signal.homeTeam} vs {signal.awayTeam}
                 </p>
-                <p className="text-xs text-[var(--color-text-muted)]">
+                <p className="text-xs text-(--color-text-muted)">
                   Ref: {signal.refereeName} • {signal.market}
                 </p>
               </div>
@@ -74,8 +74,8 @@ export function TradeSignalPanel({ signals, trades }: TradeSignalPanelProps) {
                 <span
                   className={`text-xs font-bold px-2 py-0.5 rounded ${
                     signal.action.includes('OVER') || signal.action.includes('HOME')
-                      ? 'bg-[var(--color-cyan)]/10 text-[var(--color-cyan)]'
-                      : 'bg-[var(--color-purple)]/10 text-[var(--color-purple)]'
+                      ? 'bg-(--color-cyan)/10 text-(--color-cyan)'
+                      : 'bg-(--color-purple)/10 text-(--color-purple)'
                   }`}
                   style={{ fontFamily: 'var(--font-mono)' }}
                 >
@@ -83,7 +83,7 @@ export function TradeSignalPanel({ signals, trades }: TradeSignalPanelProps) {
                 </span>
                 <div className="text-right">
                   <p
-                    className="text-sm font-bold text-[var(--color-cyan)]"
+                    className="text-sm font-bold text-(--color-cyan)"
                     style={{ fontFamily: 'var(--font-mono)' }}
                   >
                     +{(signal.edgePct * 100).toFixed(1)}% edge
@@ -92,8 +92,8 @@ export function TradeSignalPanel({ signals, trades }: TradeSignalPanelProps) {
                     <p
                       className={`text-xs font-medium ${
                         trade.pnl > 0
-                          ? 'text-[var(--color-emerald)]'
-                          : 'text-[var(--color-red)]'
+                          ? 'text-(--color-emerald)'
+                          : 'text-(--color-red)'
                       }`}
                       style={{ fontFamily: 'var(--font-mono)' }}
                     >

@@ -9,21 +9,21 @@ export function PLTracker({ trades, stats }: PLTrackerProps) {
   return (
     <div className="glass-card p-4">
       <h2
-        className="text-sm font-semibold text-[var(--color-text-secondary)] tracking-widest uppercase mb-4"
+        className="text-sm font-semibold text-(--color-text-secondary) tracking-widest uppercase mb-4"
         style={{ fontFamily: 'var(--font-display)' }}
       >
         Trade History
       </h2>
 
       {/* Summary Row */}
-      <div className="grid grid-cols-4 gap-4 mb-4 pb-4 border-b border-[var(--color-border)]">
+      <div className="grid grid-cols-4 gap-4 mb-4 pb-4 border-b border-(--color-border)">
         <div>
-          <p className="text-xs text-[var(--color-text-muted)]">Total P&L</p>
+          <p className="text-xs text-(--color-text-muted)">Total P&L</p>
           <p
             className={`text-lg font-bold ${
               stats.totalPnl >= 0
-                ? 'text-[var(--color-emerald)]'
-                : 'text-[var(--color-red)]'
+                ? 'text-(--color-emerald)'
+                : 'text-(--color-red)'
             }`}
             style={{ fontFamily: 'var(--font-mono)' }}
           >
@@ -31,12 +31,12 @@ export function PLTracker({ trades, stats }: PLTrackerProps) {
           </p>
         </div>
         <div>
-          <p className="text-xs text-[var(--color-text-muted)]">Return</p>
+          <p className="text-xs text-(--color-text-muted)">Return</p>
           <p
             className={`text-lg font-bold ${
               stats.totalPnlPct >= 0
-                ? 'text-[var(--color-emerald)]'
-                : 'text-[var(--color-red)]'
+                ? 'text-(--color-emerald)'
+                : 'text-(--color-red)'
             }`}
             style={{ fontFamily: 'var(--font-mono)' }}
           >
@@ -45,18 +45,18 @@ export function PLTracker({ trades, stats }: PLTrackerProps) {
           </p>
         </div>
         <div>
-          <p className="text-xs text-[var(--color-text-muted)]">Win Rate</p>
+          <p className="text-xs text-(--color-text-muted)">Win Rate</p>
           <p
-            className="text-lg font-bold text-[var(--color-text-primary)]"
+            className="text-lg font-bold text-(--color-text-primary)"
             style={{ fontFamily: 'var(--font-mono)' }}
           >
             {(stats.winRate * 100).toFixed(0)}%
           </p>
         </div>
         <div>
-          <p className="text-xs text-[var(--color-text-muted)]">Max Drawdown</p>
+          <p className="text-xs text-(--color-text-muted)">Max Drawdown</p>
           <p
-            className="text-lg font-bold text-[var(--color-red)]"
+            className="text-lg font-bold text-(--color-red)"
             style={{ fontFamily: 'var(--font-mono)' }}
           >
             -${stats.maxDrawdown.toFixed(2)}
@@ -68,7 +68,7 @@ export function PLTracker({ trades, stats }: PLTrackerProps) {
       <div className="overflow-x-auto">
         <table className="w-full text-xs" style={{ fontFamily: 'var(--font-mono)' }}>
           <thead>
-            <tr className="text-[var(--color-text-muted)] border-b border-[var(--color-border)]">
+            <tr className="text-(--color-text-muted) border-b border-(--color-border)">
               <th className="text-left py-2 pr-4">Market</th>
               <th className="text-left py-2 pr-4">Action</th>
               <th className="text-right py-2 pr-4">Entry</th>
@@ -81,36 +81,36 @@ export function PLTracker({ trades, stats }: PLTrackerProps) {
             {trades.map((trade) => (
               <tr
                 key={trade.id}
-                className="border-b border-[var(--color-border)]/50 hover:bg-[var(--color-bg-hover)]/30 transition-colors"
+                className="border-b border-(--color-border)/50 hover:bg-(--color-bg-hover)/30 transition-colors"
               >
-                <td className="py-2 pr-4 text-[var(--color-text-primary)]">
+                <td className="py-2 pr-4 text-(--color-text-primary)">
                   {trade.market}
                 </td>
                 <td className="py-2 pr-4">
                   <span
                     className={
                       trade.action.includes('OVER') || trade.action.includes('HOME')
-                        ? 'text-[var(--color-cyan)]'
-                        : 'text-[var(--color-purple)]'
+                        ? 'text-(--color-cyan)'
+                        : 'text-(--color-purple)'
                     }
                   >
                     {trade.action.replace('BUY_', '')}
                   </span>
                 </td>
-                <td className="py-2 pr-4 text-right text-[var(--color-text-secondary)]">
+                <td className="py-2 pr-4 text-right text-(--color-text-secondary)">
                   ${trade.entryPrice.toFixed(2)}
                 </td>
-                <td className="py-2 pr-4 text-right text-[var(--color-text-secondary)]">
+                <td className="py-2 pr-4 text-right text-(--color-text-secondary)">
                   {trade.exitPrice !== null ? `$${trade.exitPrice.toFixed(2)}` : '—'}
                 </td>
-                <td className="py-2 pr-4 text-right text-[var(--color-text-secondary)]">
+                <td className="py-2 pr-4 text-right text-(--color-text-secondary)">
                   {trade.shares.toFixed(2)}
                 </td>
                 <td
                   className={`py-2 text-right font-bold ${
                     trade.pnl !== null && trade.pnl >= 0
-                      ? 'text-[var(--color-emerald)]'
-                      : 'text-[var(--color-red)]'
+                      ? 'text-(--color-emerald)'
+                      : 'text-(--color-red)'
                   }`}
                 >
                   {trade.pnl !== null

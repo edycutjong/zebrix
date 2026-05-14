@@ -17,21 +17,21 @@ export default function DashboardPage() {
   return (
     <div className="min-h-screen relative scanlines">
       {/* Header */}
-      <header className="border-b border-[var(--color-border)] bg-[var(--color-bg-card)]/80 backdrop-blur-sm sticky top-0 z-50">
+      <header className="border-b border-(--color-border) bg-(--color-bg-card)/80 backdrop-blur-sm sticky top-0 z-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-lg bg-[var(--color-cyan)]/10 border border-[var(--color-cyan)]/20 flex items-center justify-center">
+              <div className="w-10 h-10 rounded-lg bg-(--color-cyan)/10 border border-(--color-cyan)/20 flex items-center justify-center">
                 <span className="text-xl">🦓</span>
               </div>
               <div>
                 <h1
-                  className="text-xl font-bold tracking-wider text-[var(--color-text-primary)]"
+                  className="text-xl font-bold tracking-wider text-(--color-text-primary)"
                   style={{ fontFamily: 'var(--font-display)' }}
                 >
                   ZEBRIX
                 </h1>
-                <p className="text-xs text-[var(--color-text-muted)] tracking-wide">
+                <p className="text-xs text-(--color-text-muted) tracking-wide">
                   REFEREE ASSIGNMENT ALPHA • POLYMARKET
                 </p>
               </div>
@@ -40,12 +40,12 @@ export default function DashboardPage() {
             <div className="flex items-center gap-4">
               <div className="flex items-center gap-2 text-sm">
                 <span className="status-dot status-dot-live" />
-                <span className="text-[var(--color-emerald)]" style={{ fontFamily: 'var(--font-mono)' }}>
+                <span className="text-(--color-emerald)" style={{ fontFamily: 'var(--font-mono)' }}>
                   LIVE
                 </span>
               </div>
               <div
-                className="text-xs text-[var(--color-text-muted)] px-3 py-1 rounded-full border border-[var(--color-border)]"
+                className="text-xs text-(--color-text-muted) px-3 py-1 rounded-full border border-(--color-border)"
                 style={{ fontFamily: 'var(--font-mono)' }}
               >
                 DEGA Rank • Canon CLI
@@ -73,7 +73,7 @@ export default function DashboardPage() {
         {/* Referee Tendencies */}
         <div>
           <h2
-            className="text-sm font-semibold text-[var(--color-text-secondary)] tracking-widest uppercase mb-4"
+            className="text-sm font-semibold text-(--color-text-secondary) tracking-widest uppercase mb-4"
             style={{ fontFamily: 'var(--font-display)' }}
           >
             Referee Tendency Database
@@ -90,8 +90,8 @@ export default function DashboardPage() {
       </main>
 
       {/* Footer */}
-      <footer className="border-t border-[var(--color-border)] py-4 mt-8">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center text-xs text-[var(--color-text-muted)]">
+      <footer className="border-t border-(--color-border) py-4 mt-8">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center text-xs text-(--color-text-muted)">
           <span style={{ fontFamily: 'var(--font-mono)' }}>
             © 2026 Zebrix • DEGA NBA Playoffs Hackathon
           </span>

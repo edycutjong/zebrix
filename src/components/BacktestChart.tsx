@@ -36,14 +36,14 @@ function ChartTooltip({
       className="glass-card p-3 text-xs"
       style={{ fontFamily: 'var(--font-mono)' }}
     >
-      <p className="text-[var(--color-text-muted)] mb-1">{label}</p>
+      <p className="text-(--color-text-muted) mb-1">{label}</p>
       {payload.map((entry) => (
         <p
           key={entry.dataKey}
           className={
             entry.value >= 0
-              ? 'text-[var(--color-emerald)]'
-              : 'text-[var(--color-red)]'
+              ? 'text-(--color-emerald)'
+              : 'text-(--color-red)'
           }
         >
           {entry.dataKey === 'cumulativePnl' ? 'Cumulative' : 'Daily'}:{' '}
@@ -58,7 +58,7 @@ export function BacktestChart({ data }: BacktestChartProps) {
   return (
     <div className="glass-card p-4">
       <h2
-        className="text-sm font-semibold text-[var(--color-text-secondary)] tracking-widest uppercase mb-4"
+        className="text-sm font-semibold text-(--color-text-secondary) tracking-widest uppercase mb-4"
         style={{ fontFamily: 'var(--font-display)' }}
       >
         P&L Performance

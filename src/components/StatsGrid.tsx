@@ -73,7 +73,7 @@ export function StatsGrid({ stats }: StatsGridProps) {
             key={card.key}
             className={`glass-card p-3 ${card.glow(value)}`}
           >
-            <p className="text-[10px] text-[var(--color-text-muted)] uppercase tracking-wider mb-1">
+            <p className="text-[10px] text-(--color-text-muted) uppercase tracking-wider mb-1">
               {card.label}
             </p>
             <p
