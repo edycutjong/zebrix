@@ -35,13 +35,16 @@ export function ChartTooltip({
 }) {
   if (!active || !payload) return null;
 
+  // Filter out duplicate dataKeys (e.g., from rendering both Area and Line for cumulativePnl)
+  const uniquePayload = payload.filter((v, i, a) => a.findIndex(t => (t.dataKey === v.dataKey)) === i);
+
   return (
     <div
       className="glass-card p-3 text-xs"
       style={{ fontFamily: 'var(--font-mono)' }}
     >
       <p className="text-(--color-text-muted) mb-1">{label}</p>
-      {payload.map((entry) => (
+      {uniquePayload.map((entry) => (
         <p
           key={entry.dataKey}
           className={
