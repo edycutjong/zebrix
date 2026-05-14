@@ -27,7 +27,7 @@ export function PLTracker({ trades, stats }: PLTrackerProps) {
             }`}
             style={{ fontFamily: 'var(--font-mono)' }}
           >
-            {stats.totalPnl >= 0 ? '+' : ''}${stats.totalPnl.toFixed(2)}
+            {`${stats.totalPnl >= 0 ? '+' : '-'}$${Math.abs(stats.totalPnl).toFixed(2)}`}
           </p>
         </div>
         <div>
@@ -40,8 +40,7 @@ export function PLTracker({ trades, stats }: PLTrackerProps) {
             }`}
             style={{ fontFamily: 'var(--font-mono)' }}
           >
-            {stats.totalPnlPct >= 0 ? '+' : ''}
-            {stats.totalPnlPct.toFixed(2)}%
+            {`${stats.totalPnlPct >= 0 ? '+' : ''}${stats.totalPnlPct.toFixed(2)}%`}
           </p>
         </div>
         <div>
@@ -50,7 +49,7 @@ export function PLTracker({ trades, stats }: PLTrackerProps) {
             className="text-lg font-bold text-(--color-text-primary)"
             style={{ fontFamily: 'var(--font-mono)' }}
           >
-            {(stats.winRate * 100).toFixed(0)}%
+            {`${(stats.winRate * 100).toFixed(0)}%`}
           </p>
         </div>
         <div>
@@ -59,7 +58,7 @@ export function PLTracker({ trades, stats }: PLTrackerProps) {
             className="text-lg font-bold text-(--color-red)"
             style={{ fontFamily: 'var(--font-mono)' }}
           >
-            -${stats.maxDrawdown.toFixed(2)}
+            {`-$${Math.abs(stats.maxDrawdown).toFixed(2)}`}
           </p>
         </div>
       </div>
@@ -98,7 +97,7 @@ export function PLTracker({ trades, stats }: PLTrackerProps) {
                   </span>
                 </td>
                 <td className="py-2 pr-4 text-right text-(--color-text-secondary)">
-                  ${trade.entryPrice.toFixed(2)}
+                  {`$${trade.entryPrice.toFixed(2)}`}
                 </td>
                 <td className="py-2 pr-4 text-right text-(--color-text-secondary)">
                   {trade.exitPrice !== null ? `$${trade.exitPrice.toFixed(2)}` : '—'}
@@ -114,7 +113,7 @@ export function PLTracker({ trades, stats }: PLTrackerProps) {
                   }`}
                 >
                   {trade.pnl !== null
-                    ? `${trade.pnl >= 0 ? '+' : ''}$${trade.pnl.toFixed(2)}`
+                    ? `${trade.pnl >= 0 ? '+' : '-'}$${Math.abs(trade.pnl).toFixed(2)}`
                     : '—'}
                 </td>
               </tr>

@@ -16,8 +16,13 @@ export function TradeSignalPanel({ signals, trades }: TradeSignalPanelProps) {
       </h2>
 
       <div className="space-y-3">
-        {signals.map((signal) => {
-          const trade = trades.find((t) => t.signalId === signal.id);
+        {signals.length === 0 ? (
+          <p className="text-sm text-(--color-text-muted) text-center py-8">
+            No active signals detected.
+          </p>
+        ) : (
+          signals.map((signal) => {
+            const trade = trades.find((t) => t.signalId === signal.id);
 
           return (
             <div
@@ -97,14 +102,14 @@ export function TradeSignalPanel({ signals, trades }: TradeSignalPanelProps) {
                       }`}
                       style={{ fontFamily: 'var(--font-mono)' }}
                     >
-                      {trade.pnl > 0 ? '+' : ''}${trade.pnl.toFixed(2)}
+                      {`${trade.pnl >= 0 ? '+' : '-'}$${Math.abs(trade.pnl).toFixed(2)}`}
                     </p>
                   )}
                 </div>
               </div>
             </div>
           );
-        })}
+        }))}
       </div>
     </div>
   );

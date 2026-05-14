@@ -19,8 +19,12 @@ interface BacktestChartProps {
   data: PnlDataPoint[];
 }
 
+export const formatXAxis = (val: string) => val.slice(5);
+export const formatYAxis = (val: number) => `$${val}`;
+
 // Custom tooltip — declared outside render per project rules
-function ChartTooltip({
+// Custom tooltip - exported for testing
+export function ChartTooltip({
   active,
   payload,
   label,
@@ -46,8 +50,9 @@ function ChartTooltip({
               : 'text-(--color-red)'
           }
         >
-          {entry.dataKey === 'cumulativePnl' ? 'Cumulative' : 'Daily'}:{' '}
-          {entry.value >= 0 ? '+' : ''}${entry.value.toFixed(2)}
+          {`${entry.dataKey === 'cumulativePnl' ? 'Cumulative' : 'Daily'}: ${
+            entry.value >= 0 ? '+' : '-'
+          }$${Math.abs(entry.value).toFixed(2)}`}
         </p>
       ))}
     </div>
@@ -74,13 +79,13 @@ export function BacktestChart({ data }: BacktestChartProps) {
           <XAxis
             dataKey="date"
             tick={{ fill: COLORS.textSecondary, fontSize: 10 }}
-            tickFormatter={(val: string) => val.slice(5)}
+            tickFormatter={formatXAxis}
             axisLine={{ stroke: COLORS.grid }}
             tickLine={false}
           />
           <YAxis
             tick={{ fill: COLORS.textSecondary, fontSize: 10 }}
-            tickFormatter={(val: number) => `$${val}`}
+            tickFormatter={formatYAxis}
             axisLine={false}
             tickLine={false}
           />

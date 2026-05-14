@@ -52,7 +52,7 @@ export function RefereeTendencyCard({ referee }: RefereeTendencyCardProps) {
             }`}
             style={{ fontFamily: 'var(--font-mono)' }}
           >
-            {(referee.overPct * 100).toFixed(1)}%
+            {`${(referee.overPct * 100).toFixed(1)}%`}
           </p>
           <p className="text-[10px] text-(--color-text-muted)">
             {overBias > 0 ? '+' : ''}
@@ -73,7 +73,7 @@ export function RefereeTendencyCard({ referee }: RefereeTendencyCardProps) {
             }`}
             style={{ fontFamily: 'var(--font-mono)' }}
           >
-            {(referee.homeWinPct * 100).toFixed(1)}%
+            {`${(referee.homeWinPct * 100).toFixed(1)}%`}
           </p>
           <p className="text-[10px] text-(--color-text-muted)">
             {homeBias > 0 ? '+' : ''}
@@ -108,8 +108,7 @@ export function RefereeTendencyCard({ referee }: RefereeTendencyCardProps) {
             }`}
             style={{ fontFamily: 'var(--font-mono)' }}
           >
-            {referee.pointAdjustment > 0 ? '+' : ''}
-            {referee.pointAdjustment.toFixed(1)}
+            {`${referee.pointAdjustment > 0 ? '+' : ''}${referee.pointAdjustment.toFixed(1)}`}
           </p>
           <p className="text-[10px] text-(--color-text-muted)">pts vs league</p>
         </div>

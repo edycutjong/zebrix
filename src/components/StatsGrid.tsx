@@ -8,7 +8,7 @@ const statCards = [
   {
     key: 'totalPnl',
     label: 'Total P&L',
-    format: (v: number) => `${v >= 0 ? '+' : ''}$${v.toFixed(2)}`,
+    format: (v: number) => `${v >= 0 ? '+' : '-'}$${Math.abs(v).toFixed(2)}`,
     color: (v: number) => (v >= 0 ? 'var(--color-emerald)' : 'var(--color-red)'),
     glow: (v: number) => (v >= 0 ? 'glow-emerald' : 'glow-red'),
   },
@@ -57,7 +57,7 @@ const statCards = [
   {
     key: 'maxDrawdown',
     label: 'Max Drawdown',
-    format: (v: number) => `-$${v.toFixed(2)}`,
+    format: (v: number) => `-$${Math.abs(v).toFixed(2)}`,
     color: () => 'var(--color-red)',
     glow: () => '',
   },
