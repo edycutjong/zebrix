@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <defs>
+    <linearGradient id="z-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F59E0B"/>
+      <stop offset="50%" stop-color="#D97706"/>
+      <stop offset="100%" stop-color="#A855F7"/>
+    </linearGradient>
+    <linearGradient id="stripe-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#020617"/>
+      <stop offset="100%" stop-color="#0F172A"/>
+    </linearGradient>
+    <linearGradient id="chart-grad" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#22C55E"/>
+      <stop offset="100%" stop-color="#10B981"/>
+    </linearGradient>
+    <filter id="outer-glow">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="16" result="blur"/>
+      <feFlood flood-color="#F59E0B" flood-opacity="0.35"/>
+      <feComposite in2="blur" operator="in" result="glow"/>
+      <feMerge>
+        <feMergeNode in="glow"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <clipPath id="z-clip">
+      <path d="M 128 120 L 384 120 L 384 172 L 216 340 L 384 340 L 384 392 L 128 392 L 128 340 L 296 172 L 128 172 Z"/>
+    </clipPath>
+    <radialGradient id="bg-glow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#0F172A"/>
+      <stop offset="85%" stop-color="#020617"/>
+      <stop offset="100%" stop-color="#010409"/>
+    </radialGradient>
+  </defs>
+
+  <!-- Background circle -->
+  <circle cx="256" cy="256" r="248" fill="url(#bg-glow)"/>
+  <circle cx="256" cy="256" r="248" fill="none" stroke="rgba(245,158,11,0.15)" stroke-width="2"/>
+
+  <!-- Ambient glow behind Z -->
+  <ellipse cx="256" cy="260" rx="160" ry="140" fill="rgba(245,158,11,0.06)"/>
+  <ellipse cx="270" cy="250" rx="120" ry="110" fill="rgba(168,85,247,0.04)"/>
+
+  <!-- Z lettermark with gradient -->
+  <g filter="url(#outer-glow)">
+    <path d="M 128 120 L 384 120 L 384 172 L 216 340 L 384 340 L 384 392 L 128 392 L 128 340 L 296 172 L 128 172 Z" 
+          fill="url(#z-grad)"/>
+  </g>
+
+  <!-- Zebra stripes (clipped to Z shape) -->
+  <g clip-path="url(#z-clip)" opacity="0.35">
+    <rect x="120" y="145" width="280" height="14" rx="2" fill="url(#stripe-grad)" transform="rotate(-25 256 256)"/>
+    <rect x="120" y="190" width="280" height="14" rx="2" fill="url(#stripe-grad)" transform="rotate(-25 256 256)"/>
+    <rect x="120" y="235" width="280" height="14" rx="2" fill="url(#stripe-grad)" transform="rotate(-25 256 256)"/>
+    <rect x="120" y="280" width="280" height="14" rx="2" fill="url(#stripe-grad)" transform="rotate(-25 256 256)"/>
+    <rect x="120" y="325" width="280" height="14" rx="2" fill="url(#stripe-grad)" transform="rotate(-25 256 256)"/>
+    <rect x="120" y="370" width="280" height="14" rx="2" fill="url(#stripe-grad)" transform="rotate(-25 256 256)"/>
+  </g>
+
+  <!-- Rising chart line (green, bottom right) -->
+  <g stroke="url(#chart-grad)" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <polyline points="310,420 340,400 365,410 395,370 420,345"/>
+    <!-- Arrow head -->
+    <polyline points="410,340 420,345 415,358"/>
+  </g>
+
+  <!-- Signal arcs (top right) -->
+  <g stroke="url(#z-grad)" stroke-width="3" fill="none" opacity="0.5">
+    <path d="M 395 95 Q 420 115 395 135" stroke-linecap="round"/>
+    <path d="M 410 80 Q 445 115 410 150" stroke-linecap="round" opacity="0.35"/>
+    <path d="M 425 65 Q 470 115 425 165" stroke-linecap="round" opacity="0.2"/>
+  </g>
+
+  <!-- Dot accents -->
+  <circle cx="420" cy="345" r="5" fill="#22C55E" opacity="0.8"/>
+  <circle cx="395" cy="95" r="3" fill="#F59E0B" opacity="0.6"/>
+</svg>
