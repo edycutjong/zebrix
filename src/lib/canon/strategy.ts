@@ -9,8 +9,9 @@
 
 import type { TradeSignal } from '../types';
 import * as cheerio from 'cheerio';
-import { ClobClient } from '@polymarket/clob-client';
+import { ClobClient, Side } from '@polymarket/clob-client';
 import { ethers } from 'ethers';
+import { createClient } from '@supabase/supabase-js';
 import { MOCK_SIGNALS } from '../mock-data';
 
 // ── Canon Strategy Interface ─────────────────────────────────
@@ -92,7 +93,8 @@ export class ZebrixStrategy implements CanonStrategy {
       this._clobClient = new ClobClient(
         'https://clob.polymarket.com',
         137, // Polygon Mainnet Chain ID
-        wallet,
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        wallet as any,
         {
           key: config.polymarket.apiKey,
           secret: config.polymarket.apiSecret,
@@ -122,10 +124,24 @@ export class ZebrixStrategy implements CanonStrategy {
       const html = await response.text();
       const $ = cheerio.load(html);
       
-      const signals: TradeSignal[] = [];
       const rows = $('table tbody tr');
       
       if (rows.length > 0) {
+        const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL || '';
+        const supabaseKey = process.env.SUPABASE_SERVICE_ROLE_KEY || process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || '';
+        let dbRefs: Record<string, unknown>[] = [];
+        
+        if (supabaseUrl && supabaseKey) {
+          const supabase = createClient(supabaseUrl, supabaseKey);
+          const { data, error } = await supabase.from('referees').select('*');
+          if (!error && data) {
+            dbRefs = data;
+            console.log(`[Zebrix] Fetched ${dbRefs.length} historical referees from Supabase`);
+          } else if (error) {
+            console.error('[Zebrix] Error fetching from Supabase:', error);
+          }
+        }
+
         // Parse actual assignments
         rows.each((i, row) => {
           const cells = $(row).find('td');
@@ -137,8 +153,11 @@ export class ZebrixStrategy implements CanonStrategy {
             
             console.log(`[Zebrix] Scraped Assignment: ${gameMatchup} | Referees: ${crewChief}, ${referee}, ${umpire}`);
             
-            // Note: A real implementation would query the historical biases of these specific referees from Supabase.
-            // For now, we match against our active mock signals to generate a trade if a known edge exists.
+            // Simple logic: check if any of these scraped referees exist in our dbRefs
+            const knownRef = dbRefs.find(r => r.name === crewChief || r.name === referee || r.name === umpire);
+            if (knownRef) {
+              console.log(`[Zebrix] Found historical bias for ${knownRef.name}: Over PCT = ${knownRef.over_pct}, Home Win PCT = ${knownRef.home_win_pct}`);
+            }
           }
         });
         
@@ -167,14 +186,14 @@ export class ZebrixStrategy implements CanonStrategy {
         const order = await this._clobClient.createOrder({
           tokenID: signal.id, // Using signal.id as tokenID placeholder
           price: signal.currentPrice,
-          side: 'BUY',
+          side: Side.BUY,
           size: sharesToBuy,
           feeRateBps: 0,
         });
         
         console.log(`[Zebrix] [LIVE] Order successfully placed: ${order.orderID}`);
         return {
-          orderId: order.orderID,
+          orderId: order.orderID.toString(),
           market: signal.market,
           side: 'BUY',
           price: signal.currentPrice,
