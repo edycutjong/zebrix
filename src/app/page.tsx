@@ -9,7 +9,7 @@ export default function LandingPage() {
     <div className="min-h-screen relative scanlines bg-(--color-bg-base) text-(--color-text-primary) font-body">
       {/* Background Grid & Gradient */}
       <div className="absolute inset-0 bg-[url('/grid.svg')] opacity-[0.05] pointer-events-none -z-10" />
-      <div className="absolute top-0 inset-x-0 h-96 bg-gradient-to-b from-(--color-cyan)/5 to-transparent pointer-events-none -z-10" />
+      <div className="absolute top-0 inset-x-0 h-96 bg-linear-to-b from-(--color-cyan)/5 to-transparent pointer-events-none -z-10" />
 
       {/* Navigation */}
       <nav className="border-b border-(--color-border) bg-(--color-bg-card)/80 backdrop-blur-sm sticky top-0 z-50">
