@@ -17,9 +17,20 @@ export function TradeSignalPanel({ signals, trades }: TradeSignalPanelProps) {
 
       <div className="space-y-3">
         {signals.length === 0 ? (
-          <p className="text-sm text-(--color-text-muted) text-center py-8">
-            No active signals detected.
-          </p>
+          <div className="flex flex-col items-center justify-center h-48 relative overflow-hidden rounded-xl border border-(--color-border) bg-(--color-bg-base)/50">
+            {/* Background Glow */}
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-32 h-32 bg-(--color-cyan)/10 blur-[40px] rounded-full z-0 pointer-events-none" />
+            
+            <div className="w-10 h-10 mb-3 rounded-lg bg-(--color-cyan)/10 border border-(--color-cyan)/20 flex items-center justify-center relative z-10 shadow-[0_0_15px_rgba(6,182,212,0.15)]">
+              <svg className="w-5 h-5 text-(--color-cyan)" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M13 10V3L4 14h7v7l9-11h-7z" />
+              </svg>
+            </div>
+            <p className="font-mono font-bold text-xs text-(--color-text-primary) tracking-widest uppercase relative z-10">AWAITING SIGNALS</p>
+            <p className="text-[10px] text-(--color-text-muted) mt-1 max-w-[200px] text-center relative z-10 font-mono">
+              Monitoring official assignments...
+            </p>
+          </div>
         ) : (
           signals.map((signal) => {
             const trade = trades.find((t) => t.signalId === signal.id);
