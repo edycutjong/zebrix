@@ -93,4 +93,8 @@ describe('PLTracker', () => {
     expect(screen.getByText('UNDER')).toBeInTheDocument();
     expect(screen.getByText('-$45.50')).toBeInTheDocument();
   });
+  it('renders empty state when there are no trades', () => {
+    render(<PLTracker trades={[]} stats={mockStats} />);
+    expect(screen.getByText('No trades executed yet. Waiting for signals...')).toBeInTheDocument();
+  });
 });

@@ -77,47 +77,55 @@ export function PLTracker({ trades, stats }: PLTrackerProps) {
             </tr>
           </thead>
           <tbody>
-            {trades.map((trade) => (
-              <tr
-                key={trade.id}
-                className="border-b border-(--color-border)/50 hover:bg-(--color-bg-hover)/30 transition-colors"
-              >
-                <td className="py-2 pr-4 text-(--color-text-primary)">
-                  {trade.market}
-                </td>
-                <td className="py-2 pr-4">
-                  <span
-                    className={
-                      trade.action.includes('OVER') || trade.action.includes('HOME')
-                        ? 'text-(--color-cyan)'
-                        : 'text-(--color-purple)'
-                    }
-                  >
-                    {trade.action.replace('BUY_', '')}
-                  </span>
-                </td>
-                <td className="py-2 pr-4 text-right text-(--color-text-secondary)">
-                  {`$${trade.entryPrice.toFixed(2)}`}
-                </td>
-                <td className="py-2 pr-4 text-right text-(--color-text-secondary)">
-                  {trade.exitPrice !== null ? `$${trade.exitPrice.toFixed(2)}` : '—'}
-                </td>
-                <td className="py-2 pr-4 text-right text-(--color-text-secondary)">
-                  {trade.shares.toFixed(2)}
-                </td>
-                <td
-                  className={`py-2 text-right font-bold ${
-                    trade.pnl !== null && trade.pnl >= 0
-                      ? 'text-(--color-emerald)'
-                      : 'text-(--color-red)'
-                  }`}
-                >
-                  {trade.pnl !== null
-                    ? `${trade.pnl >= 0 ? '+' : '-'}$${Math.abs(trade.pnl).toFixed(2)}`
-                    : '—'}
+            {trades.length === 0 ? (
+              <tr>
+                <td colSpan={6} className="py-8 text-center text-(--color-text-muted) italic">
+                  No trades executed yet. Waiting for signals...
                 </td>
               </tr>
-            ))}
+            ) : (
+              trades.map((trade) => (
+                <tr
+                  key={trade.id}
+                  className="border-b border-(--color-border)/50 hover:bg-(--color-bg-hover)/30 transition-colors"
+                >
+                  <td className="py-2 pr-4 text-(--color-text-primary)">
+                    {trade.market}
+                  </td>
+                  <td className="py-2 pr-4">
+                    <span
+                      className={
+                        trade.action.includes('OVER') || trade.action.includes('HOME')
+                          ? 'text-(--color-cyan)'
+                          : 'text-(--color-purple)'
+                      }
+                    >
+                      {trade.action.replace('BUY_', '')}
+                    </span>
+                  </td>
+                  <td className="py-2 pr-4 text-right text-(--color-text-secondary)">
+                    {`$${trade.entryPrice.toFixed(2)}`}
+                  </td>
+                  <td className="py-2 pr-4 text-right text-(--color-text-secondary)">
+                    {trade.exitPrice !== null ? `$${trade.exitPrice.toFixed(2)}` : '—'}
+                  </td>
+                  <td className="py-2 pr-4 text-right text-(--color-text-secondary)">
+                    {trade.shares.toFixed(2)}
+                  </td>
+                  <td
+                    className={`py-2 text-right font-bold ${
+                      trade.pnl !== null && trade.pnl >= 0
+                        ? 'text-(--color-emerald)'
+                        : 'text-(--color-red)'
+                    }`}
+                  >
+                    {trade.pnl !== null
+                      ? `${trade.pnl >= 0 ? '+' : '-'}$${Math.abs(trade.pnl).toFixed(2)}`
+                      : '—'}
+                  </td>
+                </tr>
+              ))
+            )}
           </tbody>
         </table>
       </div>
