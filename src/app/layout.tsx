@@ -21,18 +21,19 @@ const orbitron = Orbitron({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://zebrix.vercel.app'),
+  metadataBase: new URL('https://zebrix.edycu.dev'),
   title: 'Zebrix — NBA Referee Alpha Trader',
   description:
     'Automated Polymarket trader exploiting NBA referee assignment biases. Scrapes official assignments, calculates referee adjustment factors, and trades Over/Under and Moneyline markets before prices adjust.',
   icons: {
     icon: '/icon.svg',
+    apple: '/apple-icon.png',
   },
   openGraph: {
     title: 'Zebrix — NBA Referee Alpha Trader',
     description:
       'Automated Polymarket trader exploiting NBA referee assignment biases for the DEGA NBA Playoffs Prediction Market Hackathon.',
-    url: 'https://zebrix.vercel.app',
+    url: 'https://zebrix.edycu.dev',
     siteName: 'Zebrix',
     images: [
       {
@@ -60,7 +61,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${inter.variable} ${jetbrainsMono.variable} ${orbitron.variable}`}>
+    <html lang="en" className={`${inter.variable} ${jetbrainsMono.variable} ${orbitron.variable}`} suppressHydrationWarning>
       <body className="antialiased">{children}</body>
     </html>
   );
