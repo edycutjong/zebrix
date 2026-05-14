@@ -1,31 +1,34 @@
-<p align="center">
-  <img src="docs/readme-hero.png" alt="Zebrix — NBA Referee Assignment Alpha Trader" width="100%" />
-</p>
+<div align="center">
+  <h1>
+    <img src="public/icon.svg" width="36" height="36" alt="Zebrix" style="vertical-align: middle;" />
+    Zebrix
+  </h1>
+  <p><strong>Automated NBA referee-assignment alpha trader for Polymarket</strong><br/>
+  <em>"Refs leak points. We trade first."</em></p>
+  <img src="docs/readme-hero.png" alt="Zebrix" width="100%">
 
-<h1 align="center">
-  <img src="public/icon.svg" width="36" height="36" alt="Zebrix" style="vertical-align: middle;" />
-  &nbsp;Zebrix
-</h1>
+  <br/>
 
-<p align="center">
-  <strong>Automated NBA referee-assignment alpha trader for Polymarket</strong><br/>
-  <sub>Refs leak points. We trade first.</sub>
-</p>
+  [![Live Demo](https://img.shields.io/badge/🚀_Live-Demo-06b6d4?style=for-the-badge)](https://zebrix.edycu.dev)
+  [![Pitch Deck](https://img.shields.io/badge/📊_Pitch-Deck-f59e0b?style=for-the-badge)](https://zebrix.edycu.dev/pitch)
+  [![Pitch Video](https://img.shields.io/badge/🎬_Pitch-Video-ef4444?style=for-the-badge)](https://youtu.be/your-video)
+  [![Built for Hackathon](https://img.shields.io/badge/DoraHacks-DEGA_NBA-8b5cf6?style=for-the-badge)](https://dorahacks.io/hackathon/dega-nba)
 
-<p align="center">
-  <a href="https://zebrix.vercel.app"><img src="https://img.shields.io/badge/🚀_Live-Demo-06b6d4?style=for-the-badge" alt="Live Demo" /></a>&nbsp;
-  <a href="#"><img src="https://img.shields.io/badge/🎬_Pitch-Video-ef4444?style=for-the-badge" alt="Pitch Video" /></a>&nbsp;
-  <a href="https://zebrix.vercel.app/pitch"><img src="https://img.shields.io/badge/📊_Pitch-Deck-f59e0b?style=for-the-badge" alt="Pitch Deck" /></a>&nbsp;
-  <a href="https://dorahacks.io/hackathon/dega-nba"><img src="https://img.shields.io/badge/DoraHacks-DEGA_NBA-8b5cf6?style=for-the-badge" alt="Built for Hackathon" /></a>
-</p>
+  <br/>
 
-<p align="center">
-  <img src="https://img.shields.io/badge/Next.js_16-black?style=flat&logo=next.js" alt="Next.js" />&nbsp;
-  <img src="https://img.shields.io/badge/TypeScript-3178C6?style=flat&logo=typescript&logoColor=white" alt="TypeScript" />&nbsp;
-  <img src="https://img.shields.io/badge/Supabase-3ECF8E?style=flat&logo=supabase&logoColor=white" alt="Supabase" />&nbsp;
-  <img src="https://img.shields.io/badge/Tailwind_CSS_v4-38B2AC?style=flat&logo=tailwindcss&logoColor=white" alt="Tailwind" />&nbsp;
-  <a href="https://github.com/edycutjong/zebrix/actions/workflows/ci.yml"><img src="https://github.com/edycutjong/zebrix/actions/workflows/ci.yml/badge.svg" alt="CI" /></a>
-</p>
+  ![Next.js](https://img.shields.io/badge/Next.js_16-black?style=for-the-badge&logo=next.js)
+  ![React](https://img.shields.io/badge/React_19-61DAFB?style=for-the-badge&logo=react&logoColor=black)
+  ![Tailwind](https://img.shields.io/badge/Tailwind_v4-38B2AC?style=for-the-badge&logo=tailwindcss&logoColor=white)
+  ![Supabase](https://img.shields.io/badge/Supabase-3ECF8E?style=for-the-badge&logo=supabase&logoColor=white)
+  ![Polygon](https://img.shields.io/badge/Polygon-8247E5?style=for-the-badge&logo=polygon&logoColor=white)
+  ![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white)
+  [![Zebrix CI](https://github.com/edycutjong/zebrix/actions/workflows/ci.yml/badge.svg)](https://github.com/edycutjong/zebrix/actions/workflows/ci.yml)
+
+  <p>
+    <strong>Sponsored By</strong><br/>
+    DEGA & Polymarket
+  </p>
+</div>
 
 <br/>
 

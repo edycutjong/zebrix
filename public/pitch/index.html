@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Zebrix - Pitch Deck</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/5.0.4/reset.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/5.0.4/reveal.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/5.0.4/theme/black.min.css" id="theme">
+  <style>
+    :root {
+      --r-background-color: #0f172a;
+      /* Slate 900 */
+      --r-main-font: 'Inter', sans-serif;
+      --r-heading-font: 'Orbitron', sans-serif;
+      --r-heading-color: #06b6d4;
+      /* Cyan 500 */
+      --r-link-color: #10b981;
+      /* Emerald 500 */
+      --r-link-color-hover: #34d399;
+      /* Emerald 400 */
+      --r-selection-background-color: #06b6d4;
+      --r-selection-color: #fff;
+    }
+
+    .reveal h1,
+    .reveal h2,
+    .reveal h3,
+    .reveal h4,
+    .reveal h5,
+    .reveal h6 {
+      text-transform: none;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-shadow: 0 0 10px rgba(6, 182, 212, 0.3);
+    }
+
+    .reveal .slide-background {
+      background-image: radial-gradient(circle at 50% 50%, #1e293b 0%, #0f172a 100%);
+    }
+
+    .reveal pre {
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+      border: 1px solid #334155;
+      border-radius: 8px;
+    }
+
+    .reveal code {
+      font-family: 'JetBrains Mono', monospace;
+    }
+
+    .highlight-cyan {
+      color: #06b6d4;
+    }
+
+    .highlight-emerald {
+      color: #10b981;
+    }
+
+    .highlight-amber {
+      color: #f59e0b;
+    }
+
+    .highlight-red {
+      color: #ef4444;
+    }
+
+    .glass-box {
+      background: rgba(30, 41, 59, 0.7);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 12px;
+      padding: 2rem;
+      margin: 1rem 0;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    }
+
+    .metric-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+    }
+
+    .metric-card {
+      background: rgba(15, 23, 42, 0.8);
+      border: 1px solid #334155;
+      border-radius: 8px;
+      padding: 1.5rem;
+      text-align: center;
+    }
+
+    .metric-value {
+      font-size: 2.5rem;
+      font-weight: bold;
+      font-family: 'JetBrains Mono', monospace;
+      color: #06b6d4;
+    }
+
+    .metric-label {
+      font-size: 1rem;
+      color: #94a3b8;
+      margin-top: 0.5rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+  </style>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Orbitron:wght@500;700;900&family=JetBrains+Mono:wght@400;700&display=swap"
+    rel="stylesheet">
+</head>
+
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+      <!-- Slide 1: Title & Hook -->
+      <section>
+        <img src="/icon.svg" alt="Zebrix Logo"
+          style="width: 120px; border: none; box-shadow: none; background: transparent; margin-bottom: 0;">
+        <h1 style="margin-top: 0;">Zebrix</h1>
+        <h3>Automated NBA Referee-Assignment Alpha Trader</h3>
+        <p style="color: #94a3b8; font-size: 1.2rem; margin-top: 2rem;">Built for the DEGA NBA Playoffs Hackathon 2026
+        </p>
+        <p class="highlight-cyan" style="font-style: italic;">"Refs leak points. We trade first."</p>
+        <aside class="notes">
+          Hook: Welcome everyone. I'm excited to present Zebrix, a trading bot that exploits a glaring inefficiency in
+          prediction markets. While everyone else analyzes player stats, we look at the guys blowing the whistles. Refs
+          leak points, and we trade on it before the market prices it in.
+        </aside>
+      </section>
+
+      <!-- Slide 2: The Problem -->
+      <section>
+        <h2>The Problem: Blind Spots</h2>
+        <div class="glass-box">
+          <p>Prediction markets on Polymarket are <strong>inefficient by design</strong>.</p>
+          <ul>
+            <li class="fragment">The NBA publishes referee crews <strong>24 hours</strong> before tip-off.</li>
+            <li class="fragment">Retail traders and standard models systematically <strong>ignore</strong> officiating
+              biases.</li>
+            <li class="fragment">By the time the game starts, the true probability is mismatched with the market price.
+            </li>
+          </ul>
+        </div>
+        <aside class="notes">
+          Problem: In any market, an edge exists where information is public but ignored. The NBA announces refs 24
+          hours in advance. But prediction market traders are focused on injuries and player matchups. They completely
+          ignore that certain refs significantly skew the game flow. This creates a massive pricing mismatch.
+        </aside>
+      </section>
+
+      <!-- Slide 3: The Edge -->
+      <section>
+        <h2>The Alpha Signal</h2>
+        <p>The data screams, but the market is deaf.</p>
+        <div class="metric-grid" style="margin-top: 2rem;">
+          <div class="metric-card fragment">
+            <div class="metric-value">+5.7</div>
+            <div class="metric-label">Tony Brothers Over Bias</div>
+          </div>
+          <div class="metric-card fragment">
+            <div class="metric-value">68%</div>
+            <div class="metric-label">Scott Foster Home Win Rate</div>
+          </div>
+          <div class="metric-card fragment">
+            <div class="metric-value">≥6%</div>
+            <div class="metric-label">Minimum Trade Edge</div>
+          </div>
+        </div>
+        <aside class="notes">
+          Solution: The data is undeniable. For example, Tony Brothers' games average 5.7 points over the projected
+          total. Scott Foster's crews favor the home team 68% of the time, way above the league average. We wait for
+          these outlier assignments, and if our model detects at least a 6% edge against Polymarket's implied odds, we
+          strike.
+        </aside>
+      </section>
+
+      <!-- Slide 4: How It Works -->
+      <section>
+        <h2>The Workflow</h2>
+        <div class="glass-box" style="font-size: 1.2rem;">
+          <ol>
+            <li class="fragment"><strong>Ingest:</strong> Scrape `official.nba.com` for daily referee assignments.</li>
+            <li class="fragment"><strong>Enrich:</strong> Cross-reference with 6+ seasons of historical tendency data.
+            </li>
+            <li class="fragment"><strong>Score:</strong> Calculate the "Referee Adjustment Factor".</li>
+            <li class="fragment"><strong>Signal:</strong> Compare model fair price vs Polymarket CLOB.</li>
+            <li class="fragment"><strong>Execute:</strong> Trigger Canon CLI (DEGA) to place limits orders on Polygon.
+            </li>
+          </ol>
+        </div>
+        <aside class="notes">
+          How it Works: It's a fully automated pipeline. We scrape the official NBA site the minute assignments drop. We
+          cross-reference those names against a 6-year database of tendencies. We calculate a composite score, check the
+          Polymarket Central Limit Order Book, and if the edge is there, our Canon CLI integration fires off the trades
+          on the Polygon network.
+        </aside>
+      </section>
+
+      <!-- Slide 5: Tech Stack -->
+      <section>
+        <h2>Architecture & Tech Stack</h2>
+        <div style="display: flex; justify-content: space-around; flex-wrap: wrap; margin-top: 2rem;">
+          <div class="metric-card" style="width: 40%; margin-bottom: 1rem;">
+            <h4 class="highlight-cyan">Trading Engine</h4>
+            <ul style="font-size: 1rem; color: #cbd5e1;">
+              <li>Canon CLI (DEGA) Framework</li>
+              <li>Polymarket CLOB API</li>
+              <li>Polygon (USDC.e)</li>
+            </ul>
+          </div>
+          <div class="metric-card" style="width: 40%; margin-bottom: 1rem;">
+            <h4 class="highlight-emerald">Dashboard</h4>
+            <ul style="font-size: 1rem; color: #cbd5e1;">
+              <li>Next.js 16 (App Router)</li>
+              <li>React 19 & Tailwind v4</li>
+              <li>Recharts (Real-time P&L)</li>
+            </ul>
+          </div>
+          <div class="metric-card" style="width: 40%;">
+            <h4 class="highlight-amber">Data & Backend</h4>
+            <ul style="font-size: 1rem; color: #cbd5e1;">
+              <li>Supabase (PostgreSQL)</li>
+              <li>Node 20/22/24 Matrix (CI/CD)</li>
+              <li>TypeScript Strict Mode</li>
+            </ul>
+          </div>
+        </div>
+        <aside class="notes">
+          Tech Stack: We built this with a robust, modern stack. The trading engine uses Canon CLI provided by DEGA,
+          interfacing directly with the Polymarket CLOB on Polygon. The dashboard is a military-grade SOC built in
+          Next.js 16 and Tailwind v4, visualizing data stored in Supabase. Everything is strictly typed and backed by a
+          comprehensive CI/CD pipeline with 100% test coverage.
+        </aside>
+      </section>
+
+      <!-- Slide 6: Risk Management -->
+      <section>
+        <h2>Risk Management</h2>
+        <p>Protecting the bankroll systematically.</p>
+        <div class="glass-box" style="text-align: left; display: inline-block;">
+          <ul style="list-style-type: '🛡️ ';">
+            <li><strong>Max Single Trade:</strong> 5% of Bankroll</li>
+            <li><strong>Max Exposure:</strong> 20% of Bankroll</li>
+            <li><strong>Edge Threshold:</strong> Minimum 6% required</li>
+            <li><strong>Position Sizing:</strong> Half-Kelly fractional</li>
+            <li><strong>Stop-Loss:</strong> Auto-exit at -15%</li>
+          </ul>
+        </div>
+        <aside class="notes">
+          Risk: Any good trading bot lives and dies by risk management. We hardcode strict limits: 5% max on a single
+          trade, 20% max total exposure. We use Half-Kelly fractional sizing to optimize growth without over-leveraging,
+          and we have hard stop-losses in place.
+        </aside>
+      </section>
+
+      <!-- Slide 7: Dashboard UI -->
+      <section>
+        <h2>SOC Dashboard</h2>
+        <p>Real-time monitoring of alpha signals.</p>
+        <img src="https://raw.githubusercontent.com/edycutjong/zebrix/main/docs/readme.png" alt="Dashboard Screenshot"
+          style="border-radius: 12px; border: 1px solid #334155; max-height: 400px; object-fit: contain;">
+        <aside class="notes">
+          Dashboard: This is our Security Operations Center dashboard. It gives us a real-time view of referee
+          assignments, active trade signals, cumulative P&L from backtests, and system health. It's built for
+          observability so we can trust the bot to run autonomously.
+        </aside>
+      </section>
+
+      <!-- Slide 8: Backtested Validation -->
+      <section>
+        <h2>Traction & Validation</h2>
+        <div class="glass-box">
+          <h3 class="highlight-emerald">+18.7% ROI</h3>
+          <p>Backtested over 6 NBA seasons (2020-2026).</p>
+          <hr style="border-color: #334155; margin: 1.5rem 0;">
+          <ul style="font-size: 1.2rem;">
+            <li>Consistent positive expected value (+EV).</li>
+            <li>Signal fires an average of 4.2 times per week during playoffs.</li>
+            <li>Zero correlation with traditional team-stat models.</li>
+          </ul>
+        </div>
+        <aside class="notes">
+          Validation: This isn't just theoretical. We backtested the strategy over 6 NBA seasons, yielding a simulated
+          18.7% ROI. During the playoffs, the signal fires about 4 times a week, providing consistent, uncorrelated
+          alpha.
+        </aside>
+      </section>
+
+      <!-- Slide 9: The Future -->
+      <section>
+        <h2>Roadmap</h2>
+        <div class="metric-grid" style="grid-template-columns: 1fr;">
+          <div class="metric-card" style="text-align: left;">
+            <h4 class="highlight-cyan">Phase 1 (Now)</h4>
+            <p>NBA Referee Arbitrage on Polymarket via Canon CLI.</p>
+          </div>
+          <div class="metric-card" style="text-align: left;">
+            <h4 class="highlight-amber">Phase 2 (Q3 2026)</h4>
+            <p>Expand to NFL/MLB umpire/referee biases.</p>
+          </div>
+          <div class="metric-card" style="text-align: left;">
+            <h4 class="highlight-emerald">Phase 3 (2027)</h4>
+            <p>SaaS platform licensing signals to institutional market makers.</p>
+          </div>
+        </div>
+        <aside class="notes">
+          Roadmap: Today, we're exploiting NBA referee data. Next quarter, we expand into MLB umpires—where the strike
+          zone bias is huge—and NFL referee crews. Ultimately, Zebrix becomes a data-as-a-service platform, licensing
+          these highly specific, uncorrelated signals to institutional bettors and market makers.
+        </aside>
+      </section>
+
+      <!-- Slide 10: Conclusion -->
+      <section>
+        <img src="/icon.svg" alt="Zebrix Logo"
+          style="width: 100px; border: none; box-shadow: none; background: transparent; margin-bottom: 0;">
+        <h2>Zebrix</h2>
+        <p class="highlight-cyan">Trading the whistle, not the ball.</p>
+        <br />
+        <p><strong>Edy Cu</strong></p>
+        <div
+          style="font-size: 1rem; color: #94a3b8; display: flex; justify-content: center; gap: 2rem; margin-top: 2rem;">
+          <span>github.com/edycutjong</span>
+          <span>zebrix.edycu.dev</span>
+        </div>
+        <aside class="notes">
+          Conclusion: Thank you. Zebrix proves that in prediction markets, the edge doesn't go to who knows the teams
+          best, but who trades the hidden variables first. We trade the whistle, not the ball. I'm Edy, and this is
+          Zebrix.
+        </aside>
+      </section>
+
+    </div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/5.0.4/reveal.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/5.0.4/plugin/notes/notes.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/5.0.4/plugin/markdown/markdown.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/5.0.4/plugin/highlight/highlight.min.js"></script>
+  <script>
+    Reveal.initialize({
+      hash: true,
+      transition: 'fade', // none/fade/slide/convex/concave/zoom
+      backgroundTransition: 'fade',
+      plugins: [RevealMarkdown, RevealHighlight, RevealNotes]
+    });
+  </script>
+</body>
+
+</html>
