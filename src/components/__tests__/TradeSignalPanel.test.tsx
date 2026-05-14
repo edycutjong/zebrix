@@ -83,7 +83,7 @@ describe('TradeSignalPanel', () => {
 
   it('renders empty state correctly', () => {
     render(<TradeSignalPanel signals={[]} trades={[]} />);
-    expect(screen.getByText(/no active signals detected/i)).toBeInTheDocument();
+    expect(screen.getByText(/awaiting signals/i)).toBeInTheDocument();
   });
 
   it('renders different status and action labels correctly', () => {

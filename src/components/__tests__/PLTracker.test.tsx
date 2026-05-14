@@ -95,6 +95,6 @@ describe('PLTracker', () => {
   });
   it('renders empty state when there are no trades', () => {
     render(<PLTracker trades={[]} stats={mockStats} />);
-    expect(screen.getByText('No trades executed yet. Waiting for signals...')).toBeInTheDocument();
+    expect(screen.getByText('No Trades Executed')).toBeInTheDocument();
   });
 });
