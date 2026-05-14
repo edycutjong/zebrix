@@ -13,11 +13,18 @@
 </p>
 
 <p align="center">
-  <a href="https://github.com/edycutjong/zebrix/actions"><img src="https://img.shields.io/github/actions/workflow/status/edycutjong/zebrix/ci.yml?branch=main&style=for-the-badge&label=CI&logo=github&labelColor=020617&color=22C55E" alt="CI" /></a>&nbsp;
-  <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-F59E0B?style=for-the-badge&labelColor=020617" alt="License" /></a>&nbsp;
-  <img src="https://img.shields.io/badge/Next.js-16-F8FAFC?style=for-the-badge&logo=next.js&labelColor=020617" alt="Next.js 16" />&nbsp;
-  <img src="https://img.shields.io/badge/Canon_CLI-DEGA-A855F7?style=for-the-badge&labelColor=020617" alt="Canon CLI" />&nbsp;
-  <img src="https://img.shields.io/badge/Polymarket-CLOB-06b6d4?style=for-the-badge&labelColor=020617" alt="Polymarket" />
+  <a href="https://zebrix.vercel.app"><img src="https://img.shields.io/badge/🚀_Live-Demo-06b6d4?style=for-the-badge" alt="Live Demo" /></a>&nbsp;
+  <a href="#"><img src="https://img.shields.io/badge/🎬_Pitch-Video-ef4444?style=for-the-badge" alt="Pitch Video" /></a>&nbsp;
+  <a href="https://zebrix.vercel.app/pitch"><img src="https://img.shields.io/badge/📊_Pitch-Deck-f59e0b?style=for-the-badge" alt="Pitch Deck" /></a>&nbsp;
+  <a href="https://dorahacks.io/hackathon/dega-nba"><img src="https://img.shields.io/badge/DoraHacks-DEGA_NBA-8b5cf6?style=for-the-badge" alt="Built for Hackathon" /></a>
+</p>
+
+<p align="center">
+  <img src="https://img.shields.io/badge/Next.js_16-black?style=flat&logo=next.js" alt="Next.js" />&nbsp;
+  <img src="https://img.shields.io/badge/TypeScript-3178C6?style=flat&logo=typescript&logoColor=white" alt="TypeScript" />&nbsp;
+  <img src="https://img.shields.io/badge/Supabase-3ECF8E?style=flat&logo=supabase&logoColor=white" alt="Supabase" />&nbsp;
+  <img src="https://img.shields.io/badge/Tailwind_CSS_v4-38B2AC?style=flat&logo=tailwindcss&logoColor=white" alt="Tailwind" />&nbsp;
+  <a href="https://github.com/edycutjong/zebrix/actions/workflows/ci.yml"><img src="https://github.com/edycutjong/zebrix/actions/workflows/ci.yml/badge.svg" alt="CI" /></a>
 </p>
 
 <br/>
