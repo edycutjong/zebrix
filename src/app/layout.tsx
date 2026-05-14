@@ -21,6 +21,7 @@ const orbitron = Orbitron({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://zebrix.vercel.app'),
   title: 'Zebrix — NBA Referee Alpha Trader',
   description:
     'Automated Polymarket trader exploiting NBA referee assignment biases. Scrapes official assignments, calculates referee adjustment factors, and trades Over/Under and Moneyline markets before prices adjust.',
