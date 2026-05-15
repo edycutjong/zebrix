@@ -151,7 +151,7 @@ Position Sizing Rules:
 The analytics dashboard provides real-time monitoring of referee assignments, active trade signals, and portfolio performance:
 
 <p align="center">
-  <img src="docs/readme.png" alt="Zebrix Dashboard" width="100%" />
+  <img src="docs/dashboard.png" alt="Zebrix Dashboard" width="100%" />
 </p>
 
 **Key views:**
