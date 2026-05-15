@@ -15,12 +15,12 @@
 
   <br/>
 
-  ![Next.js](https://img.shields.io/badge/Next.js_16-black?style=for-the-badge&logo=next.js)
-  ![React](https://img.shields.io/badge/React_19-61DAFB?style=for-the-badge&logo=react&logoColor=black)
-  ![Tailwind](https://img.shields.io/badge/Tailwind_v4-38B2AC?style=for-the-badge&logo=tailwindcss&logoColor=white)
-  ![Supabase](https://img.shields.io/badge/Supabase-3ECF8E?style=for-the-badge&logo=supabase&logoColor=white)
-  ![Polygon](https://img.shields.io/badge/Polygon-8247E5?style=for-the-badge&logo=polygon&logoColor=white)
-  ![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white)
+  ![Next.js](https://img.shields.io/badge/Next.js_16-black?logo=next.js)
+  ![React](https://img.shields.io/badge/React_19-61DAFB?logo=react&logoColor=black)
+  ![Tailwind](https://img.shields.io/badge/Tailwind_v4-38B2AC?logo=tailwindcss&logoColor=white)
+  ![Supabase](https://img.shields.io/badge/Supabase-3ECF8E?logo=supabase&logoColor=white)
+  ![Polygon](https://img.shields.io/badge/Polygon-8247E5?logo=polygon&logoColor=white)
+  ![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?logo=typescript&logoColor=white)
   [![Zebrix CI](https://github.com/edycutjong/zebrix/actions/workflows/ci.yml/badge.svg)](https://github.com/edycutjong/zebrix/actions/workflows/ci.yml)
 
   <p>
