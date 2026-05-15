@@ -15,12 +15,19 @@ export default function LandingPage() {
       {/* Navigation */}
       <nav className="border-b border-border bg-bg-card/80 backdrop-blur-sm sticky top-0 z-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
-          <div className="flex items-center gap-3">
-            <div className="w-8 h-8 rounded border border-cyan/30 bg-cyan/10 flex items-center justify-center p-1.5">
-              <Image src="/icon.svg" alt="Zebrix Icon" width={20} height={20} className="w-full h-full object-contain" />
+          <Link href="/" className="flex items-center gap-3 hover:opacity-80 transition-opacity">
+            <div className="w-10 h-10 rounded-lg border border-cyan/30 bg-cyan/10 flex items-center justify-center p-2">
+              <Image src="/icon.svg" alt="Zebrix Icon" width={24} height={24} className="w-full h-full object-contain" />
             </div>
-            <span className="font-bold tracking-widest text-lg font-display">ZEBRIX</span>
-          </div>
+            <div>
+              <h1 className="text-xl font-bold tracking-wider text-text-primary font-display">
+                ZEBRIX
+              </h1>
+              <p className="text-xs text-text-muted tracking-wide">
+                REFEREE ASSIGNMENT ALPHA • POLYMARKET
+              </p>
+            </div>
+          </Link>
           <div className="flex items-center gap-4">
             <a href="https://github.com/edycutjong/Zebrix" target="_blank" rel="noopener noreferrer" className="text-sm font-mono text-text-muted hover:text-cyan transition-colors">
               GitHub

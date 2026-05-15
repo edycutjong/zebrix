@@ -198,43 +198,33 @@ export default function DashboardPage() {
   return (
     <div className="min-h-screen relative scanlines">
       {/* Header */}
-      <header className="border-b border-(--color-border) bg-(--color-bg-card)/80 backdrop-blur-sm sticky top-0 z-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
-          <div className="flex items-center justify-between">
-            <Link href="/" className="flex items-center gap-3 hover:opacity-80 transition-opacity">
-              <div className="w-10 h-10 rounded-lg bg-(--color-cyan)/10 border border-(--color-cyan)/20 flex items-center justify-center p-2">
-                <Image src="/icon.svg" alt="Zebrix Icon" width={24} height={24} className="w-full h-full object-contain" />
-              </div>
-              <div>
-                <h1
-                  className="text-xl font-bold tracking-wider text-(--color-text-primary)"
-                  style={{ fontFamily: 'var(--font-display)' }}
-                >
-                  ZEBRIX
-                </h1>
-                <p className="text-xs text-(--color-text-muted) tracking-wide">
-                  REFEREE ASSIGNMENT ALPHA • POLYMARKET
-                </p>
-              </div>
-            </Link>
+      <nav className="border-b border-border bg-bg-card/80 backdrop-blur-sm sticky top-0 z-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+          <Link href="/" className="flex items-center gap-3 hover:opacity-80 transition-opacity">
+            <div className="w-10 h-10 rounded-lg border border-cyan/30 bg-cyan/10 flex items-center justify-center p-2">
+              <Image src="/icon.svg" alt="Zebrix Icon" width={24} height={24} className="w-full h-full object-contain" />
+            </div>
+            <div>
+              <h1 className="text-xl font-bold tracking-wider text-text-primary font-display">
+                ZEBRIX
+              </h1>
+              <p className="text-xs text-text-muted tracking-wide">
+                REFEREE ASSIGNMENT ALPHA • POLYMARKET
+              </p>
+            </div>
+          </Link>
 
-            <div className="flex items-center gap-4">
-              <div className="flex items-center gap-2 text-sm">
-                <span className="status-dot status-dot-live" />
-                <span className="text-(--color-emerald)" style={{ fontFamily: 'var(--font-mono)' }}>
-                  LIVE
-                </span>
-              </div>
-              <div
-                className="text-xs text-(--color-text-muted) px-3 py-1 rounded-full border border-(--color-border)"
-                style={{ fontFamily: 'var(--font-mono)' }}
-              >
-                DEGA Rank • Canon CLI
-              </div>
+          <div className="flex items-center gap-4">
+            <div className="flex items-center gap-2 text-sm font-mono text-emerald">
+              <span className="status-dot status-dot-live" />
+              LIVE
+            </div>
+            <div className="text-xs text-text-muted px-3 py-1 rounded-full border border-border font-mono">
+              DEGA Rank • Canon CLI
             </div>
           </div>
         </div>
-      </header>
+      </nav>
 
       {/* Main Dashboard */}
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 space-y-6 relative z-10">
