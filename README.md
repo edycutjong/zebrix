@@ -11,7 +11,7 @@
 
   [![Live Demo](https://img.shields.io/badge/🚀_Live-Demo-06b6d4?style=for-the-badge)](https://zebrix.edycu.dev)
   [![Pitch Deck](https://img.shields.io/badge/📊_Pitch-Deck-f59e0b?style=for-the-badge)](https://zebrix.edycu.dev/pitch)
-  [![Pitch Video](https://img.shields.io/badge/🎬_Pitch-Video-ef4444?style=for-the-badge)](https://youtu.be/your-video)
+  [![Pitch Video](https://img.shields.io/badge/🎬_Pitch-Video-ef4444?style=for-the-badge)](https://youtu.be/OkuA9sHAOOs)
   [![Built for Hackathon](https://img.shields.io/badge/DoraHacks-DEGA_NBA-8b5cf6?style=for-the-badge)](https://dorahacks.io/hackathon/nba-prediction-market/detail)
 
   <br/>
@@ -370,13 +370,13 @@ zebrix/
 ## Demo
 
 <p align="center">
-  <a href="#">
+  <a href="https://youtu.be/OkuA9sHAOOs">
     <img src="docs/youtube-thumbnail.png" alt="Zebrix Demo Video" width="600" />
   </a>
 </p>
 
 <p align="center">
-  <sub>▶️ Watch the full demo on YouTube (coming soon)</sub>
+  <sub>▶️ [Watch the full demo on YouTube](https://youtu.be/OkuA9sHAOOs)</sub>
 </p>
 
 <br/>
