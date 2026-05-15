@@ -349,7 +349,7 @@ zebrix/
 
 <p align="center">
   <a href="https://youtu.be/OkuA9sHAOOs">
-    <img src="docs/youtube-thumbnail.png" alt="Zebrix Demo Video" width="600" />
+    <img src="docs/youtube-thumbnail.png" alt="Zebrix Demo Video" width="100%" />
   </a>
 </p>
 

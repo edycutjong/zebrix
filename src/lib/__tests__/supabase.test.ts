@@ -13,8 +13,8 @@ jest.mock('@supabase/supabase-js', () => ({
 describe('Supabase Client', () => {
   it('initializes with the correct URL and key', () => {
     expect(createClient).toHaveBeenCalledWith(
-      process.env.NEXT_PUBLIC_SUPABASE_URL,
-      process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY
+      process.env.NEXT_PUBLIC_SUPABASE_URL || 'https://placeholder.supabase.co',
+      process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || 'placeholder'
     );
   });
 
