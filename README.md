@@ -1,7 +1,6 @@
 <div align="center">
   <h1>
-    <img src="public/icon.svg" width="36" height="36" alt="Zebrix" style="vertical-align: middle;" />
-    Zebrix
+    Zebrix 🏀
   </h1>
   <p><strong>Automated NBA referee-assignment alpha trader for Polymarket</strong><br/>
   <em>"Refs leak points. We trade first."</em></p>
@@ -74,39 +73,18 @@ Every game, the league publishes referee crew assignments **24 hours before tip-
 
 ## How It Works
 
-```
-                    ┌──────────────────────┐
-                    │    NBA OFFICIAL API   │
-                    │  Referee Assignments  │
-                    │   (24h pre-game)      │
-                    └──────────┬───────────┘
-                               │ Scrape
-                    ┌──────────▼───────────┐
-                    │   CREW PARSER        │
-                    │   Extract ref names  │
-                    │   Match to history   │
-                    └──────────┬───────────┘
-                               │
-          ┌────────────────────▼─────────────────────┐
-          │         ZEBRIX STRATEGY ENGINE            │
-          │                                           │
-          │  ┌─────────────┐  ┌────────────────────┐ │
-          │  │  Ref Bias    │  │  Signal Generator  │ │
-          │  │  Database    │──│  Fair price calc   │ │
-          │  │  (6yr data)  │  │  Edge ≥ 6%?        │ │
-          │  └─────────────┘  └─────────┬──────────┘ │
-          │                             │             │
-          │  ┌──────────────────────────▼──────────┐ │
-          │  │  Risk Manager                       │ │
-          │  │  5% max/trade · 20% max exposure    │ │
-          │  └──────────────────────────┬──────────┘ │
-          └────────────────────────────┬─────────────┘
-                                       │ Execute
-                    ┌──────────────────▼───────────┐
-                    │      POLYMARKET CLOB          │
-                    │   Polygon · USDC.e Settlement │
-                    │   DEGA Rank P&L Tracking      │
-                    └──────────────────────────────┘
+```mermaid
+flowchart TD
+    API["NBA OFFICIAL API<br>Referee Assignments<br>(24h pre-game)"] -->|Scrape| Parser["CREW PARSER<br>Extract ref names<br>Match to history"]
+    
+    subgraph Engine ["ZEBRIX STRATEGY ENGINE"]
+        direction TB
+        DB["Ref Bias<br>Database<br>(6yr data)"] --> Signal["Signal Generator<br>Fair price calc<br>Edge ≥ 6%?"]
+        Signal --> Risk["Risk Manager<br>5% max/trade · 20% max exposure"]
+    end
+    
+    Parser --> Engine
+    Risk -->|Execute| Polymarket["POLYMARKET CLOB<br>Polygon · USDC.e Settlement<br>DEGA Rank P&L Tracking"]
 ```
 
 <br/>
